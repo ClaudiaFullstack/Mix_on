@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="./css/style.css">
+  <title>MIX ON</title>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top" id="navbar-primary">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="nav navbar-nav justify-content-between">
+        <li class="nav-item btn btn-primary2" href="./users" role="button">
+          <a class="btn btn-primary2" href="./index" role="button">HOME</a>
+        </li>
+        <li class="nav-item btn btn-primary2" href="./tracks" role="button">
+          <a class="btn btn-primary2" href="./tracks" role="button">TRACKS</a>
+        </li>
+        <li>
+          <div class="logoHeader">
+            <div style="display: flex;"><a>ARTIST</a></div>
+            <div style="display: flex;"> <img class="logo2" src="./img/drehregler.png" alt=""></div>
+          
+          </div>
+        </li>
+        <li>
+          <a class="btn btn-primary2" href="./" role="button">LOGIN</a>
+        </li>
+        <li>
+          <a class="btn btn-primary2" href="/register" role="button">REGISTER</a>
+        </li>
+      </ul>
+
+    </div>
+
+    </div>
+  </nav>
+<br>
+
+
+<table id="table" class="table table-dark">
+  <thead>
+    <tr>
+      <th class="thColor">ID ARTIST</th>
+      <th class="thColor">NAME</th>
+      <th class="thColor">LAST NAME</th>
+      <th class="thColor">ARTIST NAME</th>
+      <th class="thColor">NATIONALITY</th>
+      <th class="thColor">EMAIL</th>
+      <th class="thColor">EDIT</th>
+      <th class="thColor">DELETE</th>
+    </tr>
+  </thead>
+
+
+  <tbody>
+    <% data.forEach(function (user) { %>
+    <tr>
+      <td><%= user.id_artist %></td>
+      <td><%= user.name %></td>
+      <td><%= user.last_name %></td>
+      <td><%= user.artist_name %></td>
+      <td><%= user.nationality %></td>
+      <td><%= user.email %></td>
+      <td><a href="/users/edit/<%= user.id_artist %>">Edit</a></td>
+      <td><a href="/users/delete/<%= user.id_artist %>">Delete</a></td>
+
+      <% }) %>
+    </tr>
+  </tbody>
+</table>
+ 
+  
+
+
+
+</form> 
+
+
+</body>
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+  integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+  integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+  integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+
+</html>

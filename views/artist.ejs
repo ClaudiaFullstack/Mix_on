@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="./css/style.css">
+  <title>TRACKS</title>
+</head>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12 col-md-6">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+
+
+
+            <li class="nav-item dropdown">
+              <a class="btn btn-primary2" href="./users" role="button">ARTIST</a>
+
+            </li>
+
+
+            <div class="logoLetras2">
+              <a>TRACKS</a>
+            </div>
+          </ul>
+
+
+          <a class="btn btn-primary2" href="./" role="button">LOGIN</a>
+          <a class="btn btn-primary2" href="/register" role="button">REGISTER</a>
+
+
+
+        </div>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+<table id="table" class="table table-dark">
+  <thead>
+    <tr>
+      <th class="thColor">ID TRACK </th>
+      <th class="thColor">ID ARTIST</th>
+      <th class="thColor">TRACK NAME</th>
+      <th class="thColor">STYLE</th>
+      <th class="thColor">BPM</th>
+      <th class="thColor">ARMONY</th>
+      <th class="thColor">AUDIO FORMAT</th>
+      <th class="thColor">FILE</th>
+      <th class="thColor">EDIT</th>
+      <th class="thColor">DELETE</th>
+
+
+    </tr>
+  </thead>
+
+  <tbody>
+    <% data.forEach(function (tracks) { %>
+
+    <tr>
+      <td><%= tracks.id_track %></td>
+      <td><%= tracks.id_artist %></td>
+      <td><%= tracks.track_name %></td>
+      <td><%= tracks.style %></td>
+      <td><%= tracks.bpm %></td>
+      <td><%= tracks.armony %></td>
+      <td><%= tracks.audio_format %></td>
+
+
+      <audio controls>
+        <source src="/uploads/<%= tracks.upload_file %>" type="audio/mpeg">
+      </audio>
+
+
+
+
+
+      <!-- <td><a href="/tracks/uploads/<%= tracks.upload_file %>">UPLOAD</a></td> -->
+      <td><a href="/tracks/edit/<%= tracks.id_track %>">EDIT</a></td>
+      <td><a href="/tracks/delete/<%= tracks.id_track %>">DELETE</a></td>
+      <% }) %>
+
+    </tr>
+    <br>
+
+  </tbody>
+</table>
+
+</form>
+
+</body>
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+  integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+  integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+  integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+
+</html>
